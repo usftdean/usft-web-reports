@@ -1,0 +1,30 @@
+body {
+  padding: 0 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.dateEntry{
+  padding: 20px;
+}
+.flex-box{
+  display: flex;
+  height: 90vh;
+}
+.one-third{
+  width: 33%;
+}
+.two-thirds{
+  width: 66%;
+}
+.centered{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.full-height{
+  height: 100%;
+}

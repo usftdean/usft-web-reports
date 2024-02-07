@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FluentReport Browser Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="fluentReportsBrowser.min.js"></script>
+    <script type="text/javascript" src="./javascripts/getdata.js"></script>
+    <script type="text/javascript" src="./javascripts/reportsettings.js"></script>
+    <style type="text/css" media="screen">
+        #fluentReportsError {
+            background-color: red;
+            color: white;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body onload="clearStuff()">
+    <div class="centered">
+        <h1>Welcome to USFT Web Sales Reports</h1>
+
+    </div>
+    <div class="flex-box">
+        <div class="one-third">
+            <div id="fluentReportsError">
+                <br>
+                If you are seeing this, this means that the <font color="yellow">"fluentReportsBrowser.min.js"</font> file was
+                not copied into this directory to be used. Please copy this file from the "../generator" directory to use this
+                example.
+                <br><br>
+            </div>
+            <form id="reportForm" onsubmit="return false" class="form-signin full-width text-center">
+                <h1 class="h3 mb-3 font-weight-normal">Select the desired Criteria</h1>
+                <label for="report">Choose a report:</label>
+                <select name="report" id="report" onchange="updateFormAction()">
+                    <option value="ServiceAgreements">Service Agreements</option>
+                    <option value="demo2">demo2</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+
+                <div class="dateEntry">
+                    <label for="startDate">Enter start date:</label>
+                    <input type="date" id="startDate" name="startDate" placeholder="Start Date" required>
+                </div>
+                <div class="dateEntry">
+                    <label for="endDate">Enter end date:</label>
+                    <input type="date" id="endDate" name="endDate" placeholder="End Date" required>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="startReport('ServiceAgreements'); ">Run Report</button>
+            </form>
+
+        </div>
+        <div class="two-thirds">
+            <div>Report Generator</div>
+            <div id="fluentReportsEditor"></div>
+            <div id="fluentReport" class="full-height">
+                <iframe id="iframe" width="100%" height="100%" style="display:none"></iframe>
+            </div>
+            <pre id="results"></pre>
+
+        </div>
+
+    </div>
+</body>
+</html>
